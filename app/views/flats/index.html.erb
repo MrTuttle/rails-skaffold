@@ -1,14 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Flats</h1>
-<%= image_tag("github_octocat.png") %>
+<%= image_tag("github_octocat.png", heigh: "100" ) %>
 
-<div id="flats">
+<div id="flats" class="cards">
   <% @flats.each do |flat| %>
     <%= render flat %>
-    <p>
-      <%= link_to "Show this flat", flat %>
-    </p>
   <% end %>
 </div>
 

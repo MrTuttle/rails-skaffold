@@ -1,5 +1,5 @@
 <div id="<%= dom_id flat %>" class="card p-4">
-<%= image_tag(flat.picture_url, size:"100") %>
+<%= image_tag(flat.picture_url, class:"image") %>
   <p>
     <strong>Name:</strong>
     <%= flat.name %>
@@ -9,5 +9,7 @@
     <strong>Address:</strong>
     <%= flat.address %>
   </p>
+  <p>   <%= link_to "Show this flat", flat %>
+</p>
 
 </div>
