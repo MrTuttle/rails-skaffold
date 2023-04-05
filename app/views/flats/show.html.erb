@@ -3,8 +3,8 @@
 <%= render @flat %>
 
 <div>
-  <%= link_to "Edit this flat", edit_flat_path(@flat) %> |
-  <%= link_to "Back to flats", flats_path %>
+  <%= link_to "Edit this flat", edit_flat_path(@flat), class: "btn btn-flat" %> |
+  <%= link_to "Back to flats", flats_path, class: "btn btn-flat" %>
 
-  <%= button_to "Destroy this flat", @flat, method: :delete %>
+  <%= button_to "Destroy this flat", @flat, method: :delete, class: "btn btn-flat" %>
 </div>
