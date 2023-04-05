@@ -1,5 +1,6 @@
 <div id="<%= dom_id flat %>" class="card p-4">
-<%= image_tag(flat.picture_url, class:"image") %>
+<%#= image_tag(flat.picture_url, class:"image") %>
+<%= cl_image_tag @flat.photo.key, height: 300, width: 400, crop: :fill %>
   <p>
     <strong>Name:</strong>
     <%= flat.name %>
