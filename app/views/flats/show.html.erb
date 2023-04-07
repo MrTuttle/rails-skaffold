@@ -1,10 +1,11 @@
 <p style="color: green"><%= notice %></p>
+<div class="card p-4">
+  <%= render @flat %>
 
-<%= render @flat %>
+  <div class="d-flex">
+    <%= link_to "Edit this flat", edit_flat_path(@flat), class: "btn btn-flat me-2" %>
+    <%= button_to "Destroy this flat", @flat, method: :delete, class: "btn btn-flat me-2" %>
+    <%= link_to "Back to flats", flats_path, class: "btn btn-flat me-2" %>
 
-<div>
-  <%= link_to "Edit this flat", edit_flat_path(@flat), class: "btn btn-flat" %> |
-  <%= link_to "Back to flats", flats_path, class: "btn btn-flat" %>
-
-  <%= button_to "Destroy this flat", @flat, method: :delete, class: "btn btn-flat" %>
+  </div>
 </div>
