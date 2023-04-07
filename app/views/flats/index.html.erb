@@ -5,7 +5,10 @@
 
 <div id="flats" class="cards">
   <% @flats.each do |flat| %>
+  <div class="card p-4">
     <%= render flat %>
+    <%= link_to "Show this flat", flat %>
+  </div>
   <% end %>
 </div>
 
