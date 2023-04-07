@@ -22,7 +22,6 @@ class FlatsController < ApplicationController
   # POST /flats or /flats.json
   def create
     @flat = Flat.new(flat_params)
-
     respond_to do |format|
       if @flat.save
         format.html { redirect_to flat_url(@flat), notice: "Flat was successfully created." }
@@ -65,6 +64,6 @@ class FlatsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def flat_params
-      params.require(:flat).permit(:name, :address, :picture_url)
+      params.require(:flat).permit(:name, :address, :picture_url, :photo)
     end
 end

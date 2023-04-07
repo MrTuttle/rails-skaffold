@@ -8,7 +8,17 @@
 puts "Cleaning database..."
 Flat.destroy_all
 puts "creating flats..."
-Flat.create!(name: "Poppy Puppy", address: "12 rue Gambetta, 71000 Mâcon", picture_url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1316&q=80.jpg")
-Flat.create!(name: "La maison du coin", address: "12 rue Impecable, 71000 Mâcon", picture_url: "https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2009&q=80.jpg")
-Flat.create!(name: "Yummy", address: "12 rue m, 71000 Mâcon", picture_url: "https://images.unsplash.com/photo-1551133988-ad26c02243e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80.jpg")
+
+require "open-uri"
+file1 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+flat1 = Flat.new(name: "Igor", address: "rue des manteaux troués")
+flat1.photo.attach(io: file1, filename: "nes.png", content_type: "image/png")
+flat1.save
+
+file2 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1920px-Image_created_with_a_mobile_phone.png")
+flat2 = Flat.new(name: "Josette", address: "rue des pieds crevés")
+flat2.photo.attach(io: file2, filename: "op.jpg", content_type: "image/png")
+flat2.save
+
+
 puts "ok"
